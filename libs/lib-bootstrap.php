@@ -5,7 +5,7 @@ $path = '';
 
 // bootstrap for getting ABSPATH constant to wp-load.php outside the admin screen
 if ( ! defined('WP_LOAD_PATH') ) {
-	$classic_root = dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/';
+	$classic_root = dirname( dirname( dirname( dirname( dirname( __FILE__ ) ) ) ) ) . '/wp/';
 	if ( file_exists( $classic_root . 'wp-load.php' ) ) {
 		define('WP_LOAD_PATH', $classic_root);
 	} else {
