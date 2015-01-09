@@ -100,6 +100,11 @@ jQuery(function ($) {
 		toggleLink(lset);
 		allowSecure();
 	});
+	$('#block').click(function() {
+		if (($('#block').is(':checked')) && ($('#gdet_h').is(':checked'))) {
+			$('#gdet_n').attr('checked', false); 
+		}
+	});
 	
 	$('#vw_bgcolor').attr('data-default-color', '#EBEBEB');
 	$('#vw_pbcolor').attr('data-default-color', '#DADADA');
@@ -152,7 +157,9 @@ jQuery(function ($) {
 	function allowSecure() {
 		var isSecurable = false;
 		if ($('#link_show').val() == "none") {
-			if ($('#gdet_n').is(':checked') && $('#tb_fullscr').val() !== "default") {
+			if ($('#gdet_h').is(':checked')) {
+				isSecurable = true;
+			} else if (! $('#gdet_h').is(':checked') && $('#tb_fullscr').val() !== "default") {
 				isSecurable = true;
 			} else if (! $('#gdet_n').is(':checked')) {
 				isSecurable = true;
@@ -162,6 +169,7 @@ jQuery(function ($) {
 			$('#linkblock').show();
 		} else {
 			$('#linkblock').hide();
+			$('#block').attr('checked', false); 
 		}
 	}
 	
@@ -340,7 +348,6 @@ jQuery(function ($) {
 		}
 	});
 	
-	
 	// validate input
 	$("#debugsend").click(function(e) {
 		$(".err").hide();
@@ -354,7 +361,9 @@ jQuery(function ($) {
 		
 		e.preventDefault();
 		
-		if ($('#sc').val() == "" && $('#msg').val() == "") {
+		if ($('#sc').val() !== "" && $('#msg').val() == "") {
+			alert( jqs_vars.baddebug );
+		} else if ($('#msg').val() == "") {
 			alert( jqs_vars.baddebug );
 		} else {
 			$("#debugsend").attr("disabled","true");

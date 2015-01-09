@@ -52,7 +52,7 @@ function gde_profile_form( $id = 1 ) {
 						<select name="viewer" id="viewer">
 <?php
 	gde_profile_option( $p['viewer'], 'standard', __('Standard Viewer', 'gde'), __('Embed the basic viewer only', 'gde') );
-	gde_profile_option( $p['viewer'], 'enhanced', __('Enhanced Viewer', 'gde'), __('Enable extended viewer options', 'gde') );
+	//gde_profile_option( $p['viewer'], 'enhanced', __('Enhanced Viewer', 'gde'), __('Enable extended viewer options', 'gde') );
 ?>
 						</select><br/>
 						<span class="gde-fnote" id="viewer-h"></span>
@@ -60,7 +60,7 @@ function gde_profile_form( $id = 1 ) {
 				</tr>
 			</tbody>
 		</table>
-		
+		<!--
 		<fieldset class="gde-inner<?php echo $hideenh; ?>" id="gde-enh-fs">
 			<legend><?php _e('Enhanced Viewer Settings', 'gde'); ?></legend>
 				<table class="form-table">
@@ -114,7 +114,7 @@ function gde_profile_form( $id = 1 ) {
 <?php
 	gde_profile_checkbox( $p['tb_fullwin'], 'fs_win', __('Open in New Window', 'gde') );
 	gde_profile_checkbox( $p['tb_fulluser'], 'fs_user', __('Allow Logged-in Users Only', 'gde'), 'blockAnon' );
-	gde_profile_checkbox( $p['tb_print'], 'fs_print', __('Allow Printing', 'gde'), 'allowPrint' );
+	//gde_profile_checkbox( $p['tb_print'], 'fs_print', __('Allow Printing', 'gde'), 'allowPrint' );
 ?>
 						</td>
 					</tr>
@@ -158,7 +158,7 @@ function gde_profile_form( $id = 1 ) {
 				</tbody>
 			</table>
 		</fieldset>
-		
+		-->
 		<table class="form-table">
 			<tbody>
 				<tr valign="top">
@@ -241,7 +241,7 @@ function gde_profile_form( $id = 1 ) {
 					<td>
 <?php
 	gde_profile_checkbox( $p['link_force'], 'force', __('Force download (bypass browser plugins)', 'gde'), 'linkforce', 1 );
-	gde_profile_checkbox( $p['link_mask'], 'mask', __('Shorten URL', 'gde'), 'linkmask', 1 );
+	//gde_profile_checkbox( $p['link_mask'], 'mask', __('Shorten URL', 'gde'), 'linkmask', 1 );
 ?>
 					</td>
 				</tr>
